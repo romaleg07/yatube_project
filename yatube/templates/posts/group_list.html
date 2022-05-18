@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+  {{ group.title }}
+{% endblock %}
+{% block content %}
+  <p>
+    Группа тайных поклонников графа.
+  </p>
+{% for post in posts %}
+  <article>
+    <ul>
+      <li>
+        Автор: {{ post.author.get_full_name }}
+      </li>
+      <li>
+        Дата публикации: {{ post.pub_date|date:"d E Y" }}
+      </li>
+    </ul>      
+    <p>
+      {{ post.text }}
+    </p>         
+  </article>
+{% if not forloop.last %}<hr>{% endif %}
+{% endfor %} 
+{% endblock %}

@@ -1,0 +1,16 @@
+{% include 'includes/header.html'%}
+
+<main>
+  <!-- класс py-5 создает отступы сверху и снизу блока -->
+  <div class="container py-5">     
+    <h1>
+      {% block title %}
+      {% endblock %}
+    </h1>
+    
+    {% block content %}
+    {% endblock %}
+  </div>  
+</main>
+
+{% include 'includes/footer.html'%}
